@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+* {
+    /* margin: 0;
+    padding: 0; */
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 10%;
+}
+
+.container {
+    max-width: 700px;
+    width: 100%;
+}
+
+.title {
+    justify-content: center;
+}
+
+.container form .two-column {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+form .two-column .two-column-input-box {
+    width: calc(100% / 2 - 40px);
+    padding: 8px;
+    margin: 10px;
+}
+
+.single-column {
+    width: calc(100% - 40px);
+    padding: 8px;
+    margin: 10px;
+}
+
+form .two-column .button-style {
+    width: calc(100% / 2 - 20px);
+    padding: 8px;
+    margin: 10px;
+} 
+
+input {
+    border-radius: 5px;
+    border: 1px solid #d1d1d1;
+}
+
+.register-btn {
+    background-color: #008CBA;
+    border: none;
+    color: white;
+}
+
+.signin-btn {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+}
+
+.inline {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.sml-register {
+    border: 1px solid;
+    text-align: center;
+    padding: 1px;
+    border-radius: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 12px;
+    background-color: #008CBA;
+    color: white;
+}
+
+.weight {
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.terms {
+    color: #008CBA;
+}
+
+@media (max-width: 584px) {
+    .container {
+        max-width: 100%;
+    }
+    form .two-column .two-column-input-box {
+        width: 100%;
+        padding: 8px;
+        margin: 10px;
+    }
+    .inline {
+        display: block;
+        gap: 0px;
+        align-items: center;
+        margin-top: 10px;
+    }
+}
+
+input[type=text], input[type=tel], input[type=email], input[type=password] {
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out;
+    outline: none;
+}
+
+input[type=text]:focus, input[type=tel]:focus, input[type=email]:focus, input[type=password]:focus {
+    box-shadow: 0 0 8px rgba(0, 140, 186, 0.8);
+    border: 1px solid rgba(0, 140, 186, 0.8);
+  }
