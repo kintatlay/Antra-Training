@@ -1,0 +1,118 @@
+/*                   Reuseable Variables                  */
+:root {
+    --color-primary: #0b4d14;
+    --color-secondary: #000;
+    --color-tertiary: #c6bfbf;
+}
+
+/*                   Global                               */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    min-height:100vh;
+}
+
+/*                   Header                               */
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 20px 15%;
+    box-shadow: 0 1px 1px #ddd;
+    background-color: var(--color-secondary);
+}
+
+header li {
+    list-style: none;
+    display: inline-block;
+    padding: 0 20px;
+}
+
+header a {
+    text-decoration: none;
+    color: var(--color-tertiary);
+    transition: all 0.3s ease 0s;
+}
+
+header a:hover {
+    color: #eae7e7;
+}
+
+/*                   Section                               */
+section {
+    display: flex;
+    flex-direction: column;
+    padding: 2% 10% 2% 10%;
+    box-sizing: border-box;
+    background-color: var(--color-tertiary);
+}
+
+section > p {
+    margin-top: 2%;
+}
+
+/*                   Body                                  */
+main {
+    padding: 0 11% 0 11%;
+}
+
+main ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    justify-content: space-around;
+}
+main ul li {
+    padding: 1% 1% 1% 1%;
+    width: 30%;
+}
+
+/*                   Footer                               */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--color-primary);
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    padding: 20px 0%;
+}
+
+footer ul {
+    flex-direction: row;
+}
+
+footer li {
+    list-style: none;
+    display: inline-block;
+    padding: 0 20px;
+}
+
+footer a {
+    color: #cedbd0;
+    text-decoration: none;
+    transition: all 0.3s ease 0s;
+}
+
+footer a:hover {
+    color: #9db7a1;
+    display: flex;
+}
+
+.footer__list--group1 {
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 5%;
+}
+
+.footer__list--group2 {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 5%;
+}
