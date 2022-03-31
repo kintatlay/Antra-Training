@@ -55,6 +55,10 @@ section > p {
     margin-top: 2%;
 }
 
+.section__span--color {
+    color: #0074cc;
+}
+
 /*                   Body                                  */
 main {
     padding: 0 11% 0 11%;
