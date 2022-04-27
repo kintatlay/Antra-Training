@@ -5,7 +5,7 @@ class Item extends React.Component {
         return (
             <li>
                 <h4>{this.props.item}</h4>
-                <button onClick={() => this.props.handleDelete(this.props.item)}>X</button>
+                <button onClick={() => this.props.handleDelete(this.props.id)}>X</button>
             </li>
         )
     }

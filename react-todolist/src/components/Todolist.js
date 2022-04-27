@@ -7,8 +7,8 @@ class Todolist extends React.Component {
         const handleDelete = this.props.handleDelete;
         return (
             <ul>
-                {items.map((item, index) => 
-                    <Item item={item} key={index} handleDelete={handleDelete}/>
+                {items.map((item, i) => 
+                    <Item item={item.inputText} id={item.uniqueID} key={i} handleDelete={handleDelete}/>
                 )}
             </ul>
         )

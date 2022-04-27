@@ -5,14 +5,17 @@ import Todolist from './Todolist';
 class Container extends React.Component {
     state = {
         inputText: "",
-        todoItems: []
+        todoItems: [],
+        uniqueID: 0
     }
 
     handleSubmit = (event) => {
         event.preventDefault();
+        var newObj = {uniqueID: this.state.uniqueID, inputText: this.state.inputText};
         this.setState(prevState => ({
-            todoItems: [...prevState.todoItems, prevState.inputText],
-            inputText: ""
+            todoItems: [...prevState.todoItems, newObj],
+            inputText: "",
+            uniqueID: prevState.uniqueID + 1
         }))
         setTimeout(() => {
             console.log(this.state);
@@ -25,8 +28,8 @@ class Container extends React.Component {
         })
     }
 
-    handleDelete = (item) => {
-        const updateTodoList = this.state.todoItems.filter(value => item !== value);
+    handleDelete = (id) => {
+        const updateTodoList = this.state.todoItems.filter(value => id !== value.uniqueID);
         this.setState(prevState => ({
             ...prevState,
             todoItems: updateTodoList
