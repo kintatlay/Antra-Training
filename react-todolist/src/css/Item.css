@@ -1,0 +1,6 @@
+.todoList__list--items {
+    display: flex;
+    flex-direction: space-between;
+    background-color: green;
+    width: 330px;
+}

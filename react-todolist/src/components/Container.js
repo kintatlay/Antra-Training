@@ -1,21 +1,21 @@
 import React from 'react';
 import Form from './Form';
 import Todolist from './Todolist';
+import { v4 as uuidv4 } from 'uuid';
+import '../css/Container.css';
 
 class Container extends React.Component {
     state = {
         inputText: "",
         todoItems: [],
-        uniqueID: 0
     }
 
     handleSubmit = (event) => {
         event.preventDefault();
-        var newObj = {uniqueID: this.state.uniqueID, inputText: this.state.inputText};
+        var newObj = {uniqueID: uuidv4(), inputText: this.state.inputText};
         this.setState(prevState => ({
             todoItems: [...prevState.todoItems, newObj],
-            inputText: "",
-            uniqueID: prevState.uniqueID + 1
+            inputText: ""
         }))
         setTimeout(() => {
             console.log(this.state);
@@ -38,8 +38,8 @@ class Container extends React.Component {
 
     render() {
         return (
-            <div>
-                <Form 
+            <div className="todoList__container--background">
+                <Form
                     handleSubmit={this.handleSubmit}
                     onChange={this.onChange}
                     value={this.state.inputText}

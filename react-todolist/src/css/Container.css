@@ -1,0 +1,16 @@
+.todoList__container--background {
+    display: flex;
+    align-items: center;
+    background-color: grey;
+    flex-direction: column;
+    max-width: 400px;
+    margin-top: 3em;
+    margin-left: auto;
+    margin-right: auto;
+    height: 600px;
+    overflow: auto;
+}
+
+.todoList__container--form {
+    margin-top: 20px;
+}
