@@ -87,6 +87,7 @@ export default function Booklist({ bookData, wishList, setWishlist }) {
 
     return (
         <ul className="booklist__display--width">
+            {bookData.length === 0 ? <p></p> : null}
             {displayBookList}
             {bookData.length === 0 ? null : 
                 <ReactPaginate
@@ -98,6 +99,7 @@ export default function Booklist({ bookData, wishList, setWishlist }) {
                     previousLinkClassName={"previousBttn"}
                     disabledClassName={"paginationDisabled"}
                     activeClassName={"paginationActive"}
+                    marginPagesDisplayed={1}
                 />
             }
 

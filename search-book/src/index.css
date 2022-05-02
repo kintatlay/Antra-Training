@@ -1,3 +1,7 @@
 :root {
     --pagination-color: #7600dc;
 }
+
+html,body{
+    overflow-x: hidden;
+}

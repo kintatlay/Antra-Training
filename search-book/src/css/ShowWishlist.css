@@ -6,10 +6,12 @@
     display: flex;
     flex-direction: column;
     height: 41em;
+    overflow: auto;
 }
 
 .section__show-wishlist ul {
     padding: 0 15px;
+    overflow: auto;
 }
 
 .section__show-wishlist h2 {
@@ -26,4 +28,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+@media only screen and (max-width: 1300px) {
+    .section__show-wishlist {
+        min-width: 20em;
+    }
 }

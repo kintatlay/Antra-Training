@@ -10,6 +10,7 @@
 
 .section__wishlist ul {
     padding: 0 5px;
+    overflow: auto;
 }
 
 .section__wishlist div {
@@ -36,7 +37,7 @@
     width: 3em;
     height: 3em;
     border-radius: 10px;
-    cursor: pointer;
+    margin: 0 0 0 10px;
 }
 
 .wishlist__list--style:hover {
@@ -45,4 +46,11 @@
 
 .wishlist__list--style button:hover {
     background: linear-gradient(rgb(159, 83, 83), rgb(159, 83, 83));
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 550px) {
+    .section__wishlist {
+        min-width: 20em;
+    }
 }

@@ -6,7 +6,7 @@ export default function SearchBar({ setBookData }) {
 
     const [searchName, setSearchName] = useState("");
 
-    const [debounceSearchName] = useDebounce(searchName, 2000);
+    const [debounceSearchName] = useDebounce(searchName, 1500);
 
     useEffect(() => {
         fetchData();
@@ -15,7 +15,7 @@ export default function SearchBar({ setBookData }) {
     const fetchData = async () => {
         try{
             const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${debounceSearchName}+intitle&startIndex=0&maxResults=40`);
-            const bookData =await response.json();
+            const bookData = await response.json();
             if (bookData.totalItems === 0) {
                 setBookData([]);
             } else {

@@ -14,7 +14,7 @@ function App() {
 
   return (
     <BrowserRouter>
-    {console.log(bookData)}
+    {/* {console.log(bookData)} */}
       <Navbar />
       <Routes>
         <Route exact path="/home" 

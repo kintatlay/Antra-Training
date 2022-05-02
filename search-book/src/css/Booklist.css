@@ -16,6 +16,10 @@
 }
 
 .paginationBttns a:hover {
+    cursor: pointer;
+}
+
+.paginationBttns a:hover {
     color: white;
     background-color: var(--pagination-color);
 }
@@ -26,24 +30,23 @@
 }
 
 .booklist__display--width {
-    width: 800px;
+    width: 50%;
     list-style: none;
-    padding-inline-start: 30px;
+    padding-left: 30px;
 }
 
 .booklist__display--book {
     display: flex;
     height: 300px;
     overflow: auto;
-    cursor: pointer;
     margin-bottom: 20px;
     padding: 15px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    
 }
 
 .booklist__display--book:hover {
     background: linear-gradient(rgb(71, 43, 95, 0.20), rgb(71, 43, 95, 0.20));
+    cursor: pointer;
 }
 
 .booklist__display--img {
@@ -79,4 +82,28 @@
 .booklist__book--description p {
     margin-block-end: 0.1em;
     margin-block-start: 0.1em;
+}
+
+@media only screen and (max-width: 1300px) {
+    .booklist__display--width {
+        width: auto;
+    }
+    .booklist__display--width {
+        padding-right: 30px;
+    }
+    .booklist__display--img {
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .booklist__display--width {
+        /* width: auto; */
+    }
+    .booklist__display--img {
+        height: 80%;
+        min-width: 40%;
+        object-fit: cover;
+    }
 }
