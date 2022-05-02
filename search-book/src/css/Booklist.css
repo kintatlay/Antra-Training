@@ -84,6 +84,10 @@
     margin-block-start: 0.1em;
 }
 
+.booklist__display--empty {
+    font-style: italic;
+}
+
 @media only screen and (max-width: 1300px) {
     .booklist__display--width {
         width: auto;

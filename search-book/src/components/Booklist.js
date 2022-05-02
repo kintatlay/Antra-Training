@@ -87,7 +87,7 @@ export default function Booklist({ bookData, wishList, setWishlist }) {
 
     return (
         <ul className="booklist__display--width">
-            {bookData.length === 0 ? <p></p> : null}
+            {bookData.length === 0 ? <p className="booklist__display--empty">We cannot find any result for your search. Please enter a different book name.</p> : null}
             {displayBookList}
             {bookData.length === 0 ? null : 
                 <ReactPaginate
