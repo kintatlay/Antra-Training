@@ -23,6 +23,7 @@ export default function NavBar() {
     <div className="nav__page--link">
         <span className="nav__page--project-name">Search Book</span>
         <NavLink 
+
           style={linkCssStyle}
           to="/home">
             Home
