@@ -2,6 +2,7 @@ import { useState } from 'react';
 import SearchBar from './SearchBar';
 import Booklist from './Booklist';
 import Wishlist from './Wishlist';
+import '../css/Home.css';
 
 export default function Home({ wishList, setWishlist, bookData, setBookData }) {
 
@@ -10,15 +11,17 @@ export default function Home({ wishList, setWishlist, bookData, setBookData }) {
       <SearchBar 
         setBookData={setBookData}
       />
-      <Booklist 
-        bookData={bookData}
-        wishList={wishList}
-        setWishlist={setWishlist}
-      />
-      <Wishlist 
-        wishList={wishList}
-        setWishlist={setWishlist}
-      />
+      <section className="home__section">
+        <Booklist 
+          bookData={bookData}
+          wishList={wishList}
+          setWishlist={setWishlist}
+        />
+        <Wishlist 
+          wishList={wishList}
+          setWishlist={setWishlist}
+        />
+      </section>
     </div>
   )
 }

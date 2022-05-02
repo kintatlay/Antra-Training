@@ -18,3 +18,5 @@ You may also see any lint errors in the console.
 **Fetch API:** https://medium.com/geekculture/simple-data-fetching-in-react-with-the-fetch-api-and-axios-with-hooks-useeffect-and-usestate-85d6bd7357c2
 
 **Pagination:** https://www.youtube.com/watch?v=HANSMtDy508
+
+**Search Bar CSS:** https://www.youtube.com/watch?v=AmyGTvqcZxw

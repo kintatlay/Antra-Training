@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 import Navbar from './components/NavBar';
 import Home from './components/Home';
 import ShowWishlist from './components/ShowWishlist';
+import './App.css';
 
 function App() {
 
@@ -13,7 +14,7 @@ function App() {
 
   return (
     <BrowserRouter>
-    {console.log(wishList)}
+    {console.log(bookData)}
       <Navbar />
       <Routes>
         <Route exact path="/home" 

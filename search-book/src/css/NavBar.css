@@ -1,0 +1,13 @@
+.nav__page--link {
+    line-height: 1.5em;
+    background-color: black;
+    display: flex;
+    align-items: center;
+}
+
+.nav__page--project-name {
+    color: white;
+    margin: 0 2em;
+    font-size: 1.5em;
+}
+

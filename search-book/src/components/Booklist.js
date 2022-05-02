@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import ReactPaginate from "react-paginate";
+import "../css/Booklist.css";
 
 export default function Booklist({ bookData, wishList, setWishlist }) {
 
     const [pageNumber, setPageNumber] = useState(0);
-
+    
     const usersPerPage = 5;
     const pagesVisited = pageNumber * usersPerPage;
 
@@ -15,33 +16,52 @@ export default function Booklist({ bookData, wishList, setWishlist }) {
                 ele.volumeInfo.imageLinks === undefined ?
                 null : 
                 <a key={ele.id} onClick={() => addWishList(ele.id)}>
-                <li>             
+                <li className="booklist__display--book">             
                     <img 
+                        className="booklist__display--img"
                         src={ele.volumeInfo.imageLinks.thumbnail}
                         alt={ele.volumeInfo.title}
                     />
-                    <h2>
-                        {ele.volumeInfo.title}
-                    </h2>
-                    <h4>
-                        Publisher: 
-                    </h4>
-                    <p>
-                        {ele.volumeInfo.publisher}
-                    </p>
-                    <h4>
-                        Publish Date: 
-                    </h4>
-                    <p>
-                        {ele.volumeInfo.publishedDate}
-                    </p>
-                    <h4>
-                        Description: 
-                    </h4>
-                    <p>
-                        {ele.volumeInfo.description}
-                    </p>
-                    
+                    <aside className="booklist-display--aside">
+                        <h2>
+                            {ele.volumeInfo.title}
+                        </h2>
+                        {
+                            ele.volumeInfo.publisher ? 
+                            <div className="booklist__book--publisher">
+                                <h4>
+                                    Publisher: &nbsp;
+                                </h4>
+                                <p>
+                                    {ele.volumeInfo.publisher}
+                                </p>
+                            </div>
+                            : null
+                        }
+                        {
+                            ele.volumeInfo.publishedDate ?
+                            <div className="booklist__book--publishedDate">
+                                <h4>
+                                    Publish Date: &nbsp;
+                                </h4>
+                                <p>
+                                    {ele.volumeInfo.publishedDate}
+                                </p>
+                            </div>
+                            : null
+                        }
+                        {
+                            ele.volumeInfo.description ?
+                            <div className="booklist__book--description">
+                                <h4>Description:</h4>
+                                <p>
+                                    {ele.volumeInfo.description}
+                                </p>
+                            </div>
+                            : null
+                        }
+
+                    </aside>
                 </li>
                 </a>
             )
@@ -59,42 +79,6 @@ export default function Booklist({ bookData, wishList, setWishlist }) {
         }
     }
 
-    // const data = bookData.map((ele) => 
-    //     {
-    //         return ele.volumeInfo.imageLinks === undefined ?
-    //         null : 
-    //         <a key={ele.id} onClick={() => addWishList(ele.id)}>
-    //         <li>             
-    //             <img 
-    //                 src={ele.volumeInfo.imageLinks.thumbnail}
-    //                 alt={ele.volumeInfo.title}
-    //             />
-    //             <h2>
-    //                 {ele.volumeInfo.title}
-    //             </h2>
-    //             <h4>
-    //                 Publisher: 
-    //             </h4>
-    //             <p>
-    //                 {ele.volumeInfo.publisher}
-    //             </p>
-    //             <h4>
-    //                 Publish Date: 
-    //             </h4>
-    //             <p>
-    //                 {ele.volumeInfo.publishedDate}
-    //             </p>
-    //             <h4>
-    //                 Description: 
-    //             </h4>
-    //             <p>
-    //                 {ele.volumeInfo.description}
-    //             </p>
-                
-    //         </li>
-    //         </a>
-    //     }
-    // )
     const pageCount = Math.ceil(bookData.length / usersPerPage);
 
     const changePage = ({selected}) => {
@@ -102,18 +86,21 @@ export default function Booklist({ bookData, wishList, setWishlist }) {
     }
 
     return (
-        <ul>
+        <ul className="booklist__display--width">
             {displayBookList}
-            <ReactPaginate
-                previousLabel={"Previous"}
-                nextLabel={"Next"}
-                pageCount={pageCount}
-                onPageChange={changePage}
-                containerClassName={"paginationBttns"}
-                previousLinkClassName={"previousBttn"}
-                disabledClassName={"paginationDisabled"}
-                activeClassName={"paginationActive"}
-            />
+            {bookData.length === 0 ? null : 
+                <ReactPaginate
+                    previousLabel={"Previous"}
+                    nextLabel={"Next"}
+                    pageCount={pageCount}
+                    onPageChange={changePage}
+                    containerClassName={"paginationBttns"}
+                    previousLinkClassName={"previousBttn"}
+                    disabledClassName={"paginationDisabled"}
+                    activeClassName={"paginationActive"}
+                />
+            }
+
         </ul>
     )
 }
