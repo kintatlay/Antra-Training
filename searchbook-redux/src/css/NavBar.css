@@ -1,0 +1,25 @@
+.nav__page--link {
+    width: 100%;
+    line-height: 1.5em;
+    background-color: black;
+    display: flex;
+    align-items: center;
+}
+
+.nav__page--project-name {
+    color: white;
+    margin: 0 2em;
+    font-size: 1.5em;
+}
+
+@media only screen and (max-width: 550px) {
+    .nav__page--link {
+        max-width: 65em;
+    }
+
+    .nav__page--project-name {
+        margin: 0.2em 0 0.2em 1em;
+    }
+
+
+}
