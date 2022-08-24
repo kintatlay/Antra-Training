@@ -1,11 +1,13 @@
 import React from 'react'
+import "../css/BookDetail.css";
+import '../css/BookDetail.css';
 
-const BookDetail = ({ele}) => {
-    console.log(ele);
+const BookDetail = ({ele, handleAddWishlistCart}) => {
+    // console.log(ele);
     const { publisher, publishedDate, title, description } = ele.volumeInfo;
     const { thumbnail } = ele?.volumeInfo?.imageLinks || "";
     return (
-    <li>
+    <li className="booklist__display--book" onClick={()=> handleAddWishlistCart(ele)}>
         <img
             src={thumbnail}
             alt={`Image unavailable for ${title}`}

@@ -1,0 +1,4 @@
+.booklist__content--empty {
+    font-style: italic;
+    min-width: 60em;
+}

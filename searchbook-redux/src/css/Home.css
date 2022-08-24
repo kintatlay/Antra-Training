@@ -1,0 +1,10 @@
+.searchInfo {
+    display: flex;
+    flex-direction: row;
+}
+
+@media only screen and (max-width: 1300px) {
+    .searchInfo {
+        flex-direction: column;
+    }
+}

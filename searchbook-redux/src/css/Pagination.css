@@ -1,0 +1,13 @@
+.pagination__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.pagination__container .button-set {
+    display: flex;
+    display: row;
+    justify-content: center;
+    gap: 30px;
+}
